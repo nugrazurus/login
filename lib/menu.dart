@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Menu extends StatelessWidget {
+class MainMenu extends StatefulWidget {
+
+  @override
+  _MainMenuState createState() => _MainMenuState();
+}
+
+class _MainMenuState extends State<MainMenu> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,15 +20,6 @@ class Menu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             Container(
-            child: Hero(
-              tag: 'Menu', 
-              child: Material(
-                child: InkWell(
-                  child: Image.asset('images/untan.png', width: 50, fit: BoxFit.contain,),
-                ),
-              )),
-          ),
             Container(
               width: 150,
               height: 180,
@@ -28,13 +27,13 @@ class Menu extends StatelessWidget {
               child: Card(
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "/Halaman2");
+                    Navigator.pushNamed(context, "/Presensi");
                   },
                   child: Column(
                     children: <Widget>[
                       Hero(
                         tag: "presensi", 
-                        child: Image.asset('images/presensi.png', height: 100, width: 100, fit: BoxFit.contain,)
+                        child: Image.asset('images/alumni.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)
@@ -52,13 +51,13 @@ class Menu extends StatelessWidget {
               child: Card(
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "/Halaman3");
+                    Navigator.pushNamed(context, "/Histori");
                   },
                   child: Column(
                     children: <Widget>[
                       Hero(
                         tag: "histori", 
-                        child: Image.asset('images/histori.jpg', height: 100, width: 100, fit: BoxFit.contain,)
+                        child: Image.asset('images/academic.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)
@@ -76,13 +75,13 @@ class Menu extends StatelessWidget {
               child: Card(
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "/Halaman3");
+                    //Navigator.pushNamed(context, "/Halaman3");
                   },
                   child: Column(
                     children: <Widget>[
                       Hero(
                         tag: "profil", 
-                        child: Image.asset('images/profil.jpg', height: 100, width: 100, fit: BoxFit.contain,)
+                        child: Image.asset('images/academic.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)
