@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:toast/toast.dart';
+import 'package:intl/intl.dart';
 
 class Presensi extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+  var now = DateTime.now();
+  String formattedDate = DateFormat('h:mm').format(now);
     return Scaffold(
       appBar: AppBar(
-        title: Text("PRESENSI"),
-        backgroundColor: Colors.black12,
+        title: Text("PRESENSI", style: TextStyle(color: Colors.white),),
       ),
       body: Center(
         child: Row(
@@ -19,13 +23,13 @@ class Presensi extends StatelessWidget {
               child: Card(
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "/Halaman2");
+                    Toast.show("Check In \nPukul $formattedDate", context, gravity: Toast.CENTER);
                   },
                   child: Column(
                     children: <Widget>[
                       Hero(
-                        tag: "siakad", 
-                        child: Image.asset('images/academic.png', height: 100, width: 100, fit: BoxFit.contain,)
+                        tag: "masuk", 
+                        child: Image.asset('images/masuk.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)
@@ -43,13 +47,13 @@ class Presensi extends StatelessWidget {
               child: Card(
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "/Halaman3");
+                    Toast.show("Check Out \nPukul $formattedDate", context, gravity: Toast.CENTER);
                   },
                   child: Column(
                     children: <Widget>[
                       Hero(
-                        tag: "simalum", 
-                        child: Image.asset('images/alumni.png', height: 100, width: 100, fit: BoxFit.contain,)
+                        tag: "keluar", 
+                        child: Image.asset('images/keluar.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)

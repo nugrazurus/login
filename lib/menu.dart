@@ -13,15 +13,14 @@ class _MainMenuState extends State<MainMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("MENU"),
-        backgroundColor: Colors.black12,
+        title: Text("MENU", style: TextStyle(color: Colors.white),),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: 150,
+              width: 200,
               height: 180,
               padding: EdgeInsets.all(10),
               child: Card(
@@ -33,7 +32,7 @@ class _MainMenuState extends State<MainMenu> {
                     children: <Widget>[
                       Hero(
                         tag: "presensi", 
-                        child: Image.asset('images/alumni.png', height: 100, width: 100, fit: BoxFit.contain,)
+                        child: Image.asset('images/presensi.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)
@@ -45,7 +44,7 @@ class _MainMenuState extends State<MainMenu> {
               ),
             ),
             Container(
-              width: 150,
+              width: 200,
               height: 180,
               padding: EdgeInsets.all(10),
               child: Card(
@@ -57,31 +56,31 @@ class _MainMenuState extends State<MainMenu> {
                     children: <Widget>[
                       Hero(
                         tag: "histori", 
-                        child: Image.asset('images/academic.png', height: 100, width: 100, fit: BoxFit.contain,)
+                        child: Image.asset('images/histori.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)
                         ),
-                      Text("HISTORI ABSENSI")
+                      Text("HISTORI PRESENSI")
                     ],
                   ),
                 ),
               ),
             ),
             Container(
-              width: 150,
+              width: 200,
               height: 180,
               padding: EdgeInsets.all(10),
               child: Card(
                 child: InkWell(
                   onTap: () {
-                    //Navigator.pushNamed(context, "/Halaman3");
+                    Navigator.pushNamed(context, "/Profil");
                   },
                   child: Column(
                     children: <Widget>[
                       Hero(
                         tag: "profil", 
-                        child: Image.asset('images/academic.png', height: 100, width: 100, fit: BoxFit.contain,)
+                        child: Image.asset('images/profil.png', height: 100, width: 100, fit: BoxFit.contain,)
                         ),
                       Padding(
                         padding: EdgeInsets.all(10)

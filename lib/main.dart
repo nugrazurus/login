@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login/presensi.dart';
 import 'package:login/menu.dart';
 import 'package:login/histori.dart';
+import 'package:login/profil.dart';
 import 'package:toast/toast.dart';
 
 void main() => runApp(MyApp());
@@ -17,9 +18,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightBlue,
       ),
       routes: <String, WidgetBuilder>{
-        '/Menu': (BuildContext context) => new MainMenu(),
+        '/Menu': (context) => new MainMenu(),
         '/Presensi': (BuildContext context) => new Presensi(),
-        '/Histori': (BuildContext context) => new Histori()
+        '/Histori': (BuildContext context) => new Histori(),
+        '/Profil': (BuildContext context) => new Profil(),
+        '/Login': (BuildContext context) => new LoginPage()
       });
   }
 }
@@ -48,8 +51,8 @@ class _LoginPageState extends State<LoginPage> {
                 tag: 'logo',
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
-                  radius: 48.0,
-                  child: Image.asset('images/academic.png'),
+                  radius: 70.0,
+                  child: Image.asset('images/untanmulia.png'),
                 ),
               ),
               SizedBox(height: 20,),
@@ -99,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   form.save();
                   if (form.validate()) {
                     if (_nip == "H1051171007" && _password == "rahmanitagemoy") {
-                      Navigator.pushNamed(context, '/Menu');
+                      Navigator.of(context).pushReplacementNamed('/Menu');
                     } else {
                       Toast.show("NIP atau Password anda salah", context, gravity: Toast.TOP);
                     }
